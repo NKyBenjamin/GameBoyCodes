@@ -1,6 +1,6 @@
 #include <gb/gb.h>
 #include <stdio.h>
-#include "SmilerDemo.c"
+#include "SmileDemo.c"
 
 void main() {
     set_sprite_data(0, 2, Smiles);
