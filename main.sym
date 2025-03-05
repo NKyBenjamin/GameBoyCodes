@@ -9,16 +9,16 @@
 00:041A s__BASE
 00:054D s__LIT
 00:054D s__GSINIT
-00:060D s__GSINITTAIL
-00:060E s__GSFINAL
+00:066D s__GSINITTAIL
+00:066E s__GSFINAL
 00:C000 .OAM
 00:C0A0 s__DATA
-00:C0C0 s__BSS
-00:C119 s__HEAP
-00:C119 s__BSEG
-00:C119 s__ISEG
-00:C119 s__XSEG
-00:C119 s__OVERLAY
+00:C0D0 s__BSS
+00:C129 s__HEAP
+00:C129 s__BSEG
+00:C129 s__ISEG
+00:C129 s__XSEG
+00:C129 s__OVERLAY
 00:E000 .STACK
 00:FF80 .refresh_OAM
 ; Area: _CODE
@@ -86,24 +86,24 @@
 ; Area: _GSINITTAIL
 ; Area: _GSFINAL
 ; Area: _DATA
-00:C0A0 _XOSprites
+00:C0A0 _NKySprites
 ; Area: _BSS
-00:C0C0 __cpu
-00:C0C1 .mode
-00:C0C2 __io_out
-00:C0C3 __io_in
-00:C0C4 __io_status
-00:C0C5 .vbl_done
-00:C0C6 __current_bank
-00:C0C7 _sys_time
-00:C0C7 .sys_time
-00:C0C9 .int_0x40
-00:C0D9 .int_0x48
-00:C0E9 .int_0x50
-00:C0F9 .int_0x58
-00:C109 .int_0x60
+00:C0D0 __cpu
+00:C0D1 .mode
+00:C0D2 __io_out
+00:C0D3 __io_in
+00:C0D4 __io_status
+00:C0D5 .vbl_done
+00:C0D6 __current_bank
+00:C0D7 _sys_time
+00:C0D7 .sys_time
+00:C0D9 .int_0x40
+00:C0E9 .int_0x48
+00:C0F9 .int_0x50
+00:C109 .int_0x58
+00:C119 .int_0x60
 ; Area: _HEAP
-00:C119 _malloc_heap_start
+00:C129 _malloc_heap_start
 ; Area: _OVERLAY
 ; Area: _ISEG
 ; Area: _BSEG

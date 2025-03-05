@@ -17,10 +17,10 @@ AREA .  .ABS.
 		l__LIT	0000
 		s__SFR	0000
 		l__GSINITTAIL	0001
-		l__DATA	0020
+		l__DATA	0030
 		l__BSS	0059
 		l__CODE	006E
-		l__GSINIT	00C0
+		l__GSINIT	0120
 		l__BASE	0133
 		l__HOME	01AC
 		l__HEADER	01E1
@@ -29,16 +29,16 @@ AREA .  .ABS.
 		s__BASE	041A
 		s__LIT	054D
 		s__GSINIT	054D
-		s__GSINITTAIL	060D
-		s__GSFINAL	060E
+		s__GSINITTAIL	066D
+		s__GSFINAL	066E
 		.OAM	C000
 		s__DATA	C0A0
-		s__BSS	C0C0
-		s__HEAP	C119
-		s__BSEG	C119
-		s__ISEG	C119
-		s__XSEG	C119
-		s__OVERLAY	C119
+		s__BSS	C0D0
+		s__HEAP	C129
+		s__BSEG	C129
+		s__ISEG	C129
+		s__XSEG	C129
+		s__OVERLAY	C129
 		.STACK	E000
 		.refresh_OAM	FF80
 		l__SFR	10000
@@ -129,72 +129,72 @@ AREA _LIT
 AREA _GSINIT
 	RADIX HEX
 	BASE 054D
-	SIZE 00C0
+	SIZE 0120
 	ATTRIB REL CON
 	GLOBALS
 		gsinit	054D
 AREA _GSINITTAIL
 	RADIX HEX
-	BASE 060D
+	BASE 066D
 	SIZE 0001
 	ATTRIB REL CON
 AREA _GSFINAL
 	RADIX HEX
-	BASE 060E
+	BASE 066E
 	SIZE 0000
 	ATTRIB REL CON
 AREA _DATA
 	RADIX HEX
 	BASE C0A0
-	SIZE 0020
+	SIZE 0030
 	ATTRIB REL CON
 	GLOBALS
-		_XOSprites	C0A0
+		_NKySprites	C0A0
 AREA _BSS
 	RADIX HEX
-	BASE C0C0
+	BASE C0D0
 	SIZE 0059
 	ATTRIB REL CON
 	GLOBALS
-		__cpu	C0C0
-		.mode	C0C1
-		__io_out	C0C2
-		__io_in	C0C3
-		__io_status	C0C4
-		.vbl_done	C0C5
-		__current_bank	C0C6
-		_sys_time	C0C7
-		.sys_time	C0C7
-		.int_0x40	C0C9
-		.int_0x48	C0D9
-		.int_0x50	C0E9
-		.int_0x58	C0F9
-		.int_0x60	C109
+		__cpu	C0D0
+		.mode	C0D1
+		__io_out	C0D2
+		__io_in	C0D3
+		__io_status	C0D4
+		.vbl_done	C0D5
+		__current_bank	C0D6
+		_sys_time	C0D7
+		.sys_time	C0D7
+		.int_0x40	C0D9
+		.int_0x48	C0E9
+		.int_0x50	C0F9
+		.int_0x58	C109
+		.int_0x60	C119
 AREA _HEAP
 	RADIX HEX
-	BASE C119
+	BASE C129
 	SIZE 0000
 	ATTRIB REL CON
 	GLOBALS
-		_malloc_heap_start	C119
+		_malloc_heap_start	C129
 AREA _OVERLAY
 	RADIX HEX
-	BASE C119
+	BASE C129
 	SIZE 0000
 	ATTRIB REL CON
 AREA _ISEG
 	RADIX HEX
-	BASE C119
+	BASE C129
 	SIZE 0000
 	ATTRIB REL CON
 AREA _BSEG
 	RADIX HEX
-	BASE C119
+	BASE C129
 	SIZE 0000
 	ATTRIB REL CON
 AREA _XSEG
 	RADIX HEX
-	BASE C119
+	BASE C129
 	SIZE 0000
 	ATTRIB REL CON
 AREA _SFR
@@ -262,7 +262,7 @@ MODULES
 	FILE c:\gbdk\lib/small/asxxxx/gb/crt0.o
 		NAME Runtime
 	FILE main.o
-		NAME lcc239160
+		NAME lcc215360
 LIBRARIES
 	LIBRARY c:\gbdk\lib/small/asxxxx/gb/gb.lib
 		MODULE sfr.o
