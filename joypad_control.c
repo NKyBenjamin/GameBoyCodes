@@ -26,7 +26,7 @@ void main() {
                 break;
         }
         
-        delay(500);
+        delay(10);
         
     }
 }
