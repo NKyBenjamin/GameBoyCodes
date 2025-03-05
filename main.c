@@ -11,16 +11,18 @@ void main() {
     SHOW_SPRITES;
 
     while(1) {
-        for(int i = 0; i <= 2; i++) {
-            currentspriteindex = i;
-            if (i == 2) {
-                currentspriteindex = 0;
-            }
-            set_sprite_tile(0, currentspriteindex);
-            scroll_sprite(0,10,0);
-            wait_vbl_done();
-            delay(500);
+        if (currentspriteindex == 0) {
+            currentspriteindex = 1;
+        } else if (currentspriteindex == 1) {
+            currentspriteindex = 2;
+        } else {
+            currentspriteindex = 0;
         }
+        set_sprite_tile(0, currentspriteindex);
+        scroll_sprite(0,10,0);
+        wait_vbl_done();
+        delay(500);
+        
     }
 }
     

@@ -1,9 +1,9 @@
                               1 ;--------------------------------------------------------
                               2 ; File Created by SDCC : FreeWare ANSI-C Compiler
-                              3 ; Version 2.2.1 Wed Mar 05 17:58:03 2025
+                              3 ; Version 2.2.1 Wed Mar 05 18:04:48 2025
                               4 
                               5 ;--------------------------------------------------------
-                              6 	.module lcc215360
+                              6 	.module lcc177320
                               7 	
                               8 ;--------------------------------------------------------
                               9 ; Public variables in this module
@@ -114,7 +114,7 @@
                             114 	.area _GSINIT
                             115 	.area _GSFINAL
                             116 	.area _GSINIT
-                            117 ;	main.c 24
+                            117 ;	main.c 30
                             118 ; genAssign (pointer)
    0000 11 00 00            119 	ld	de,#_NKySprites + 0
    0003 3E 81               120 	ld	a,#0x81
@@ -476,63 +476,92 @@
    0036 E0 00               476 	ldh	(_LCDC_REG+0),a
                             477 ;	main.c 13
                             478 ; genLabel
-   0038                     479 00102$:
+   0038                     479 00108$:
                             480 ;	main.c 14
-                            481 ; genNot
-   0038 AF                  482 	xor	a,a
-   0039 B1                  483 	or	a,c
-   003A D6 01               484 	sub	a,#0x01
-   003C 3E 00               485 	ld	a,#0x00
-   003E 17                  486 	rla
-   003F 4F                  487 	ld	c,a
-                            488 ;	main.c 15
-                            489 ; genIpush
-   0040 79                  490 	ld	a,c
-   0041 F5                  491 	push	af
-   0042 33                  492 	inc	sp
-                            493 ; genIpush
-   0043 3E 00               494 	ld	a,#0x00
-   0045 F5                  495 	push	af
-   0046 33                  496 	inc	sp
-                            497 ; genCall
-   0047 CD 00 00            498 	call	_set_sprite_tile
-   004A E8 02               499 	lda	sp,2(sp)
-                            500 ;	main.c 16
-                            501 ; genIpush
-   004C 3E 00               502 	ld	a,#0x00
-   004E F5                  503 	push	af
-   004F 33                  504 	inc	sp
-                            505 ; genIpush
-   0050 3E 0A               506 	ld	a,#0x0A
-   0052 F5                  507 	push	af
-   0053 33                  508 	inc	sp
-                            509 ; genIpush
-   0054 3E 00               510 	ld	a,#0x00
-   0056 F5                  511 	push	af
-   0057 33                  512 	inc	sp
-                            513 ; genCall
-   0058 CD 00 00            514 	call	_scroll_sprite
-   005B E8 03               515 	lda	sp,3(sp)
-                            516 ;	main.c 17
-                            517 ; genCall
-   005D CD 00 00            518 	call	_wait_vbl_done
-                            519 ;	main.c 18
-                            520 ; genIpush
-   0060 21 F4 01            521 	ld	hl,#0x01F4
-   0063 E5                  522 	push	hl
-                            523 ; genCall
-   0064 CD 00 00            524 	call	_delay
-   0067 E8 02               525 	lda	sp,2(sp)
-                            526 ; genGoto
-   0069 C3 38 00            527 	jp	00102$
-                            528 ; genLabel
-   006C                     529 00104$:
-                            530 ; genEndFunction
-                            531 	
-   006C C1                  532 	pop	bc
-   006D C9                  533 	ret
-   006E                     534 ___main_end:
-                            535 	.area _CODE
+                            481 ; genCmpEq
+   0038 79                  482 	ld	a,c
+   0039 B7                  483 	or	a,a
+   003A C2 3F 00            484 	jp	nz,00115$
+   003D 18 03               485 	jr	00116$
+   003F                     486 00115$:
+   003F C3 47 00            487 	jp	00105$
+   0042                     488 00116$:
+                            489 ;	main.c 15
+                            490 ; genAssign
+   0042 0E 01               491 	ld	c,#0x01
+                            492 ; genGoto
+   0044 C3 59 00            493 	jp	00106$
+                            494 ; genLabel
+   0047                     495 00105$:
+                            496 ;	main.c 16
+                            497 ; genCmpEq
+   0047 79                  498 	ld	a,c ; 2
+   0048 FE 01               499 	cp	a,#0x01
+   004A C2 4F 00            500 	jp	nz,00117$
+   004D 18 03               501 	jr	00118$
+   004F                     502 00117$:
+   004F C3 57 00            503 	jp	00102$
+   0052                     504 00118$:
+                            505 ;	main.c 17
+                            506 ; genAssign
+   0052 0E 02               507 	ld	c,#0x02
+                            508 ; genGoto
+   0054 C3 59 00            509 	jp	00106$
+                            510 ; genLabel
+   0057                     511 00102$:
+                            512 ;	main.c 19
+                            513 ; genAssign
+   0057 0E 00               514 	ld	c,#0x00
+                            515 ; genLabel
+   0059                     516 00106$:
+                            517 ;	main.c 21
+                            518 ; genIpush
+   0059 79                  519 	ld	a,c
+   005A F5                  520 	push	af
+   005B 33                  521 	inc	sp
+                            522 ; genIpush
+   005C 3E 00               523 	ld	a,#0x00
+   005E F5                  524 	push	af
+   005F 33                  525 	inc	sp
+                            526 ; genCall
+   0060 CD 00 00            527 	call	_set_sprite_tile
+   0063 E8 02               528 	lda	sp,2(sp)
+                            529 ;	main.c 22
+                            530 ; genIpush
+   0065 3E 00               531 	ld	a,#0x00
+   0067 F5                  532 	push	af
+   0068 33                  533 	inc	sp
+                            534 ; genIpush
+   0069 3E 0A               535 	ld	a,#0x0A
+   006B F5                  536 	push	af
+   006C 33                  537 	inc	sp
+                            538 ; genIpush
+   006D 3E 00               539 	ld	a,#0x00
+   006F F5                  540 	push	af
+   0070 33                  541 	inc	sp
+                            542 ; genCall
+   0071 CD 00 00            543 	call	_scroll_sprite
+   0074 E8 03               544 	lda	sp,3(sp)
+                            545 ;	main.c 23
+                            546 ; genCall
+   0076 CD 00 00            547 	call	_wait_vbl_done
+                            548 ;	main.c 24
+                            549 ; genIpush
+   0079 21 F4 01            550 	ld	hl,#0x01F4
+   007C E5                  551 	push	hl
+                            552 ; genCall
+   007D CD 00 00            553 	call	_delay
+   0080 E8 02               554 	lda	sp,2(sp)
+                            555 ; genGoto
+   0082 C3 38 00            556 	jp	00108$
+                            557 ; genLabel
+   0085                     558 00110$:
+                            559 ; genEndFunction
+                            560 	
+   0085 C1                  561 	pop	bc
+   0086 C9                  562 	ret
+   0087                     563 ___main_end:
+                            564 	.area _CODE
 ASxxxx Assembler V01.75  (GameBoy Z80-like CPU), page 1.
 
 Symbol Table
@@ -593,7 +622,7 @@ Symbol Table
     _VBK_REG                           **** GX
     _WX_REG                            **** GX
     _WY_REG                            **** GX
-  0 ___main_end                        006E R
+  0 ___main_end                        0087 R
   0 ___main_start                      0000 R
     __cpu                              **** GX
     __io_in                            **** GX
@@ -612,7 +641,7 @@ Symbol Table
 
 Area Table
 
-   0 _CODE                              size   6E   flags 0
+   0 _CODE                              size   87   flags 0
    1 _DATA                              size   30   flags 0
    2 _OVERLAY                           size    0   flags 0
    3 _ISEG                              size    0   flags 0
