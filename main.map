@@ -147,7 +147,7 @@ AREA _DATA
 	SIZE 0020
 	ATTRIB REL CON
 	GLOBALS
-		_Smiley	C0A0
+		_XOSprites	C0A0
 AREA _BSS
 	RADIX HEX
 	BASE C0C0
@@ -260,7 +260,7 @@ MODULES
 	FILE c:\gbdk\lib/small/asxxxx/gb/crt0.o
 		NAME Runtime
 	FILE main.o
-		NAME lcc435800
+		NAME lcc389720
 LIBRARIES
 	LIBRARY c:\gbdk\lib/small/asxxxx/gb/gb.lib
 		MODULE sfr.o

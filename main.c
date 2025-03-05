@@ -13,6 +13,7 @@ void main() {
     while(1) {
         currentspriteindex = !currentspriteindex;
         set_sprite_tile(0, currentspriteindex);
+        scroll_sprite(0,10,0);
         wait_vbl_done();
         delay(500);
         

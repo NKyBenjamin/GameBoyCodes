@@ -84,7 +84,7 @@
 ; Area: _GSINITTAIL
 ; Area: _GSFINAL
 ; Area: _DATA
-00:C0A0 _Smiley
+00:C0A0 _XOSprites
 ; Area: _BSS
 00:C0C0 __cpu
 00:C0C1 .mode

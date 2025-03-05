@@ -1,9 +1,9 @@
                               1 ;--------------------------------------------------------
                               2 ; File Created by SDCC : FreeWare ANSI-C Compiler
-                              3 ; Version 2.2.1 Wed Mar 05 17:40:54 2025
+                              3 ; Version 2.2.1 Wed Mar 05 17:49:00 2025
                               4 
                               5 ;--------------------------------------------------------
-                              6 	.module lcc435800
+                              6 	.module lcc389720
                               7 	
                               8 ;--------------------------------------------------------
                               9 ; Public variables in this module
@@ -14,7 +14,7 @@
                              14 	.globl _set_sprite_data
                              15 	.globl _wait_vbl_done
                              16 	.globl _delay
-                             17 	.globl _Smiley
+                             17 	.globl _XOSprites
                              18 	.globl _main
                              19 ;--------------------------------------------------------
                              20 ; Externals used
@@ -89,7 +89,7 @@
                              89 ; internal ram data
                              90 ;--------------------------------------------------------
                              91 	.area _DATA
-   0000                      92 _Smiley::
+   0000                      92 _XOSprites::
    0000                      93 	.ds 32
                              94 ;--------------------------------------------------------
                              95 ; overlayable items in internal ram 
@@ -115,192 +115,192 @@
                             115 	.area _GSINIT
                             116 ;	main.c 23
                             117 ; genAssign (pointer)
-   0000 11 00 00            118 	ld	de,#_Smiley + 0
-   0003 3E 7E               119 	ld	a,#0x7E
+   0000 11 00 00            118 	ld	de,#_XOSprites + 0
+   0003 3E 81               119 	ld	a,#0x81
    0005 12                  120 	ld	(de),a
                             121 ; genPlus
                             122 ; genPlusIncr
-   0006 11 01 00            123 	ld	de,#_Smiley + 0 + 1
+   0006 11 01 00            123 	ld	de,#_XOSprites + 0 + 1
                             124 ; genAssign (pointer)
-   0009 3E 7E               125 	ld	a,#0x7E
+   0009 3E 81               125 	ld	a,#0x81
    000B 12                  126 	ld	(de),a
                             127 ; genPlus
                             128 ; genPlusIncr
-   000C 11 02 00            129 	ld	de,#_Smiley + 0 + 2
+   000C 11 02 00            129 	ld	de,#_XOSprites + 0 + 2
                             130 ; genAssign (pointer)
-   000F 3E 81               131 	ld	a,#0x81
+   000F 3E 42               131 	ld	a,#0x42
    0011 12                  132 	ld	(de),a
                             133 ; genPlus
                             134 ; genPlusIncr
-   0012 11 03 00            135 	ld	de,#_Smiley + 0 + 3
+   0012 11 03 00            135 	ld	de,#_XOSprites + 0 + 3
                             136 ; genAssign (pointer)
-   0015 3E FF               137 	ld	a,#0xFF
+   0015 3E 42               137 	ld	a,#0x42
    0017 12                  138 	ld	(de),a
                             139 ; genPlus
                             140 ; genPlusIncr
-   0018 11 04 00            141 	ld	de,#_Smiley + 0 + 4
+   0018 11 04 00            141 	ld	de,#_XOSprites + 0 + 4
                             142 ; genAssign (pointer)
-   001B 3E A5               143 	ld	a,#0xA5
+   001B 3E 24               143 	ld	a,#0x24
    001D 12                  144 	ld	(de),a
                             145 ; genPlus
                             146 ; genPlusIncr
-   001E 11 05 00            147 	ld	de,#_Smiley + 0 + 5
+   001E 11 05 00            147 	ld	de,#_XOSprites + 0 + 5
                             148 ; genAssign (pointer)
-   0021 3E FF               149 	ld	a,#0xFF
+   0021 3E 24               149 	ld	a,#0x24
    0023 12                  150 	ld	(de),a
                             151 ; genPlus
                             152 ; genPlusIncr
-   0024 11 06 00            153 	ld	de,#_Smiley + 0 + 6
+   0024 11 06 00            153 	ld	de,#_XOSprites + 0 + 6
                             154 ; genAssign (pointer)
-   0027 3E 81               155 	ld	a,#0x81
+   0027 3E 18               155 	ld	a,#0x18
    0029 12                  156 	ld	(de),a
                             157 ; genPlus
                             158 ; genPlusIncr
-   002A 11 07 00            159 	ld	de,#_Smiley + 0 + 7
+   002A 11 07 00            159 	ld	de,#_XOSprites + 0 + 7
                             160 ; genAssign (pointer)
-   002D 3E FF               161 	ld	a,#0xFF
+   002D 3E 18               161 	ld	a,#0x18
    002F 12                  162 	ld	(de),a
                             163 ; genPlus
                             164 ; genPlusIncr
-   0030 11 08 00            165 	ld	de,#_Smiley + 0 + 8
+   0030 11 08 00            165 	ld	de,#_XOSprites + 0 + 8
                             166 ; genAssign (pointer)
-   0033 3E BD               167 	ld	a,#0xBD
+   0033 3E 18               167 	ld	a,#0x18
    0035 12                  168 	ld	(de),a
                             169 ; genPlus
                             170 ; genPlusIncr
-   0036 11 09 00            171 	ld	de,#_Smiley + 0 + 9
+   0036 11 09 00            171 	ld	de,#_XOSprites + 0 + 9
                             172 ; genAssign (pointer)
-   0039 3E FF               173 	ld	a,#0xFF
+   0039 3E 18               173 	ld	a,#0x18
    003B 12                  174 	ld	(de),a
                             175 ; genPlus
                             176 ; genPlusIncr
-   003C 11 0A 00            177 	ld	de,#_Smiley + 0 + 10
+   003C 11 0A 00            177 	ld	de,#_XOSprites + 0 + 10
                             178 ; genAssign (pointer)
-   003F 3E 99               179 	ld	a,#0x99
+   003F 3E 24               179 	ld	a,#0x24
    0041 12                  180 	ld	(de),a
                             181 ; genPlus
                             182 ; genPlusIncr
-   0042 11 0B 00            183 	ld	de,#_Smiley + 0 + 11
+   0042 11 0B 00            183 	ld	de,#_XOSprites + 0 + 11
                             184 ; genAssign (pointer)
-   0045 3E FF               185 	ld	a,#0xFF
+   0045 3E 24               185 	ld	a,#0x24
    0047 12                  186 	ld	(de),a
                             187 ; genPlus
                             188 ; genPlusIncr
-   0048 11 0C 00            189 	ld	de,#_Smiley + 0 + 12
+   0048 11 0C 00            189 	ld	de,#_XOSprites + 0 + 12
                             190 ; genAssign (pointer)
-   004B 3E 81               191 	ld	a,#0x81
+   004B 3E 42               191 	ld	a,#0x42
    004D 12                  192 	ld	(de),a
                             193 ; genPlus
                             194 ; genPlusIncr
-   004E 11 0D 00            195 	ld	de,#_Smiley + 0 + 13
+   004E 11 0D 00            195 	ld	de,#_XOSprites + 0 + 13
                             196 ; genAssign (pointer)
-   0051 3E FF               197 	ld	a,#0xFF
+   0051 3E 42               197 	ld	a,#0x42
    0053 12                  198 	ld	(de),a
                             199 ; genPlus
                             200 ; genPlusIncr
-   0054 11 0E 00            201 	ld	de,#_Smiley + 0 + 14
+   0054 11 0E 00            201 	ld	de,#_XOSprites + 0 + 14
                             202 ; genAssign (pointer)
-   0057 3E 7E               203 	ld	a,#0x7E
+   0057 3E 81               203 	ld	a,#0x81
    0059 12                  204 	ld	(de),a
                             205 ; genPlus
                             206 ; genPlusIncr
-   005A 11 0F 00            207 	ld	de,#_Smiley + 0 + 15
+   005A 11 0F 00            207 	ld	de,#_XOSprites + 0 + 15
                             208 ; genAssign (pointer)
-   005D 3E 7E               209 	ld	a,#0x7E
+   005D 3E 81               209 	ld	a,#0x81
    005F 12                  210 	ld	(de),a
                             211 ; genPlus
                             212 ; genPlusIncr
-   0060 11 10 00            213 	ld	de,#_Smiley + 0 + 16
+   0060 11 10 00            213 	ld	de,#_XOSprites + 0 + 16
                             214 ; genAssign (pointer)
    0063 3E 7E               215 	ld	a,#0x7E
    0065 12                  216 	ld	(de),a
                             217 ; genPlus
                             218 ; genPlusIncr
-   0066 11 11 00            219 	ld	de,#_Smiley + 0 + 17
+   0066 11 11 00            219 	ld	de,#_XOSprites + 0 + 17
                             220 ; genAssign (pointer)
    0069 3E 7E               221 	ld	a,#0x7E
    006B 12                  222 	ld	(de),a
                             223 ; genPlus
                             224 ; genPlusIncr
-   006C 11 12 00            225 	ld	de,#_Smiley + 0 + 18
+   006C 11 12 00            225 	ld	de,#_XOSprites + 0 + 18
                             226 ; genAssign (pointer)
    006F 3E 81               227 	ld	a,#0x81
    0071 12                  228 	ld	(de),a
                             229 ; genPlus
                             230 ; genPlusIncr
-   0072 11 13 00            231 	ld	de,#_Smiley + 0 + 19
+   0072 11 13 00            231 	ld	de,#_XOSprites + 0 + 19
                             232 ; genAssign (pointer)
-   0075 3E FF               233 	ld	a,#0xFF
+   0075 3E 81               233 	ld	a,#0x81
    0077 12                  234 	ld	(de),a
                             235 ; genPlus
                             236 ; genPlusIncr
-   0078 11 14 00            237 	ld	de,#_Smiley + 0 + 20
+   0078 11 14 00            237 	ld	de,#_XOSprites + 0 + 20
                             238 ; genAssign (pointer)
-   007B 3E A5               239 	ld	a,#0xA5
+   007B 3E 81               239 	ld	a,#0x81
    007D 12                  240 	ld	(de),a
                             241 ; genPlus
                             242 ; genPlusIncr
-   007E 11 15 00            243 	ld	de,#_Smiley + 0 + 21
+   007E 11 15 00            243 	ld	de,#_XOSprites + 0 + 21
                             244 ; genAssign (pointer)
-   0081 3E FF               245 	ld	a,#0xFF
+   0081 3E 81               245 	ld	a,#0x81
    0083 12                  246 	ld	(de),a
                             247 ; genPlus
                             248 ; genPlusIncr
-   0084 11 16 00            249 	ld	de,#_Smiley + 0 + 22
+   0084 11 16 00            249 	ld	de,#_XOSprites + 0 + 22
                             250 ; genAssign (pointer)
    0087 3E 81               251 	ld	a,#0x81
    0089 12                  252 	ld	(de),a
                             253 ; genPlus
                             254 ; genPlusIncr
-   008A 11 17 00            255 	ld	de,#_Smiley + 0 + 23
+   008A 11 17 00            255 	ld	de,#_XOSprites + 0 + 23
                             256 ; genAssign (pointer)
-   008D 3E FF               257 	ld	a,#0xFF
+   008D 3E 81               257 	ld	a,#0x81
    008F 12                  258 	ld	(de),a
                             259 ; genPlus
                             260 ; genPlusIncr
-   0090 11 18 00            261 	ld	de,#_Smiley + 0 + 24
+   0090 11 18 00            261 	ld	de,#_XOSprites + 0 + 24
                             262 ; genAssign (pointer)
-   0093 3E A5               263 	ld	a,#0xA5
+   0093 3E 81               263 	ld	a,#0x81
    0095 12                  264 	ld	(de),a
                             265 ; genPlus
                             266 ; genPlusIncr
-   0096 11 19 00            267 	ld	de,#_Smiley + 0 + 25
+   0096 11 19 00            267 	ld	de,#_XOSprites + 0 + 25
                             268 ; genAssign (pointer)
-   0099 3E FF               269 	ld	a,#0xFF
+   0099 3E 81               269 	ld	a,#0x81
    009B 12                  270 	ld	(de),a
                             271 ; genPlus
                             272 ; genPlusIncr
-   009C 11 1A 00            273 	ld	de,#_Smiley + 0 + 26
+   009C 11 1A 00            273 	ld	de,#_XOSprites + 0 + 26
                             274 ; genAssign (pointer)
-   009F 3E 99               275 	ld	a,#0x99
+   009F 3E 81               275 	ld	a,#0x81
    00A1 12                  276 	ld	(de),a
                             277 ; genPlus
                             278 ; genPlusIncr
-   00A2 11 1B 00            279 	ld	de,#_Smiley + 0 + 27
+   00A2 11 1B 00            279 	ld	de,#_XOSprites + 0 + 27
                             280 ; genAssign (pointer)
-   00A5 3E FF               281 	ld	a,#0xFF
+   00A5 3E 81               281 	ld	a,#0x81
    00A7 12                  282 	ld	(de),a
                             283 ; genPlus
                             284 ; genPlusIncr
-   00A8 11 1C 00            285 	ld	de,#_Smiley + 0 + 28
+   00A8 11 1C 00            285 	ld	de,#_XOSprites + 0 + 28
                             286 ; genAssign (pointer)
    00AB 3E 81               287 	ld	a,#0x81
    00AD 12                  288 	ld	(de),a
                             289 ; genPlus
                             290 ; genPlusIncr
-   00AE 11 1D 00            291 	ld	de,#_Smiley + 0 + 29
+   00AE 11 1D 00            291 	ld	de,#_XOSprites + 0 + 29
                             292 ; genAssign (pointer)
-   00B1 3E FF               293 	ld	a,#0xFF
+   00B1 3E 81               293 	ld	a,#0x81
    00B3 12                  294 	ld	(de),a
                             295 ; genPlus
                             296 ; genPlusIncr
-   00B4 11 1E 00            297 	ld	de,#_Smiley + 0 + 30
+   00B4 11 1E 00            297 	ld	de,#_XOSprites + 0 + 30
                             298 ; genAssign (pointer)
    00B7 3E 7E               299 	ld	a,#0x7E
    00B9 12                  300 	ld	(de),a
                             301 ; genPlus
                             302 ; genPlusIncr
-   00BA 11 1F 00            303 	ld	de,#_Smiley + 0 + 31
+   00BA 11 1F 00            303 	ld	de,#_XOSprites + 0 + 31
                             304 ; genAssign (pointer)
    00BD 3E 7E               305 	ld	a,#0x7E
    00BF 12                  306 	ld	(de),a
@@ -328,7 +328,7 @@
    0001 0E 00               328 	ld	c,#0x00
                             329 ;	main.c 8
                             330 ; genIpush
-   0003 21 00 00            331 	ld	hl,#_Smiley + 0
+   0003 21 00 00            331 	ld	hl,#_XOSprites + 0
    0006 E5                  332 	push	hl
                             333 ; genIpush
    0007 3E 02               334 	ld	a,#0x02
@@ -473,13 +473,13 @@ Symbol Table
     _SC_REG                            **** GX
     _STAT_REG                          **** GX
     _SVBK_REG                          **** GX
-  1 _Smiley                            0000 GR
     _TAC_REG                           **** GX
     _TIMA_REG                          **** GX
     _TMA_REG                           **** GX
     _VBK_REG                           **** GX
     _WX_REG                            **** GX
     _WY_REG                            **** GX
+  1 _XOSprites                         0000 GR
   0 ___main_end                        005D R
   0 ___main_start                      0000 R
     __cpu                              **** GX
