@@ -330,7 +330,7 @@ MODULES
 	FILE c:\gbdk\lib/small/asxxxx/gb/crt0.o
 		NAME Runtime
 	FILE backgrounds.o
-		NAME lcc181360
+		NAME lcc159760
 LIBRARIES
 	LIBRARY c:\gbdk\lib/small/asxxxx/gb/gb.lib
 		MODULE sfr.o
