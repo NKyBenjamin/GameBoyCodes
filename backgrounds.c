@@ -10,7 +10,7 @@ void main() {
     min_font = font_load(font_min);
     font_set(min_font);
 
-    set_bkg_data(0, 7, BackgroundSprites);
+    set_bkg_data(37, 7, BackgroundSprites);
     set_bkg_tiles(0, 0, 40, 18, backgrounddemo);
 
     SHOW_BKG;
