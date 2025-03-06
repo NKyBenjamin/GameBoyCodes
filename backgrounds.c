@@ -14,7 +14,7 @@ void main() {
     set_bkg_data(37, 7, BackgroundSprites);
     set_bkg_tiles(0, 0, 40, 18, backgrounddemo);
     
-    set_win_tiles(0, 0, 5, 1, windowmap);
+    set_win_tiles(0, 0, 6, 1, windowmap);
     move_win(7,120);
     SHOW_BKG;
     SHOW_WIN;
