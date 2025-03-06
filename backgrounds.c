@@ -15,6 +15,7 @@ void main() {
     set_bkg_tiles(0, 0, 40, 18, backgrounddemo);
     
     set_win_tiles(0, 0, 5, 1, windowmap);
+    move_win(7,120);
     SHOW_BKG;
     SHOW_WIN;
     DISPLAY_ON;
