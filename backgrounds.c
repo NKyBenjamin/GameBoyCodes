@@ -1,6 +1,7 @@
 #include <gb/gb.h>
 #include "SimpleBackgroundSprites.c"
 #include "TheSimplestBackground.c"
+#include "windowedmap.c"
 #include <gb/font.h>
 
 void main() {
@@ -12,8 +13,10 @@ void main() {
 
     set_bkg_data(37, 7, BackgroundSprites);
     set_bkg_tiles(0, 0, 40, 18, backgrounddemo);
-
+    
+    set_win_tiles(0, 0, 5, 1, )
     SHOW_BKG;
+    SHOW_WIN;
     DISPLAY_ON;
 
     /* while (1) {
